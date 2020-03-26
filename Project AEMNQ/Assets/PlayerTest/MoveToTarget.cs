@@ -25,7 +25,7 @@ public class MoveToTarget : MonoBehaviour
         {
            // MoveToPoint(focus.position);
 
-            if (GetDistance(new Vector2(focus.position.x, focus.position.z), new Vector2(transform.position.x, transform.position.z)) > 0)
+            if (GetDistance(new Vector2(focus.position.x, focus.position.z), new Vector2(transform.position.x, transform.position.z)) > 1)
             {
                 //Debug.Log("distance = " + GetDistance(new Vector2(focus.position.x, focus.position.z), new Vector2(transform.position.x, transform.position.z)));
                 MoveToPoint(focus.position);
@@ -33,8 +33,8 @@ public class MoveToTarget : MonoBehaviour
             else
             {
                 StopFollowingTarget();
+                cursor.position = transform.position;
             }
-            cursor.position = transform.position;
         }
     }
 

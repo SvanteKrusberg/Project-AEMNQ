@@ -224,7 +224,6 @@ GameObject:
   - component: {fileID: 389393929}
   - component: {fileID: 389393928}
   - component: {fileID: 389393927}
-  - component: {fileID: 389393930}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -297,25 +296,6 @@ Transform:
   m_Father: {fileID: 1595218620}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 48.735, y: 43.587, z: 0}
---- !u!114 &389393930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 389393926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5879da9f74a35754ebd92e9fa344b674, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1595218620}
-  offset: {x: 0.36, y: -1.76, z: 1.46}
-  pitch: 0.17
-  zoomSpeed: 4
-  minZoom: 3
-  maxZoom: 10
-  yawSpeed: 100
 --- !u!1 &837035441
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,7 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa53f0328c61a654f871d9562dc54dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0.95
+  radius: 2
   item: {fileID: 11400000, guid: 0fe6cad0d1162344aaa2fba3577a3725, type: 2}
 --- !u!65 &1495088506
 BoxCollider:
