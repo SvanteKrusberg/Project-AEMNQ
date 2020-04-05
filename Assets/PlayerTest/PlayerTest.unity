@@ -720,6 +720,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8ce0d6b5bc9b143ade97a312ecc188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilities:
+  - {fileID: 11400000, guid: 0a13a7bef565cd243bf421be0c8f221f, type: 2}
+  - {fileID: 11400000, guid: 0a13a7bef565cd243bf421be0c8f221f, type: 2}
+  - {fileID: 11400000, guid: 0a13a7bef565cd243bf421be0c8f221f, type: 2}
+  - {fileID: 11400000, guid: 0a13a7bef565cd243bf421be0c8f221f, type: 2}
 --- !u!114 &1595218622
 MonoBehaviour:
   m_ObjectHideFlags: 0

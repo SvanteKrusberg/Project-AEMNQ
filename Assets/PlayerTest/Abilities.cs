@@ -4,50 +4,72 @@ using UnityEngine;
 
 public class Abilities : MonoBehaviour
 {
+    public Ability[] abilities = new Ability[4]; //abilities from assets
+    Ability[] useAbilities = new Ability[4]; //abilities to use, so you can have multiple of one ability
     bool oneDown = false;
     bool twoDown = false;
     bool threeDown = false;
     bool fourDown = false;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        for (int i = 0; i < 4; i++) //create new instances of abilities so they're not all the same
+        {
+            useAbilities[i] = ScriptableObject.CreateInstance("Ability") as Ability; //https://answers.unity.com/questions/310847/how-to-create-instance-of-scriptableobject-and-pas.html
+            useAbilities[i].Create(abilities[i]);
+        }
+    }
+
     void Update()
     {
-        if (Input.GetAxis("ab1") > 0)
+        foreach (Ability a in useAbilities) //update time since use for all abilities
+        {
+            if (a != null)
+            {
+                a.timeSinceUse += Time.deltaTime;
+            }
+        }
+
+        if (Input.GetAxis("ab1") > 0) //holding ability key
         {
             oneDown = true;
+            useAbilities[0].Hold();
         }
         if (Input.GetAxis("ab2") > 0)
         {
             twoDown = true;
+            useAbilities[1].Hold();
         }
         if (Input.GetAxis("ab3") > 0)
         {
             threeDown = true;
+            useAbilities[2].Hold();
         }
         if (Input.GetAxis("ab4") > 0)
         {
             fourDown = true;
+            useAbilities[3].Hold();
         }
 
-        if (Input.GetAxis("ab1") == 0 && oneDown)
+        if (Input.GetAxis("ab1") == 0 && oneDown) //releasing ability key
         {
             oneDown = false;
-            print("use ab1");
+            useAbilities[0].Use();
         }
         if (Input.GetAxis("ab2") == 0 && twoDown)
         {
             twoDown = false;
-            print("use ab2");
+            useAbilities[1].Use();
         }
         if (Input.GetAxis("ab3") == 0 && threeDown)
         {
             threeDown = false;
-            print("use ab3");
+            useAbilities[2].Use();
         }
         if (Input.GetAxis("ab4") == 0 && fourDown)
         {
             fourDown = false;
-            print("use ab4");
+            useAbilities[3].Use();
         }
     }
 }
